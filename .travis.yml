@@ -1,0 +1,18 @@
+language: bash
+
+services:
+  - docker
+
+matrix:
+  include:
+  - name: "DB: mariadb"
+    env:  DB_NAME=mariadb
+
+install:
+  - make ${DB_NAME}-build
+
+script:
+  - make ${DB_NAME}-test-version
+
+notifications:
+  email: true
