@@ -7,6 +7,10 @@ matrix:
   include:
   - name: "DB: mariadb"
     env:  DB_NAME=mariadb
+  - name: "DB: mysql"
+    env:  DB_NAME=mysql
+  - name: "DB: percona"
+    env:  DB_NAME=percona
 
 install:
   - make ${DB_NAME}-build
